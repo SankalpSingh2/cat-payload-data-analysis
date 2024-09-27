@@ -1,0 +1,37 @@
+Field Rated Payload (FRP) Calculation: 
+
+For each truck, the Field Rated Payload (FRP) is calculated using the formula: FRP = Rated Gross Machine Weight − Body Weight 
+whhich gives the payload capacity of the truck by subtracting the empty body weight from the total rated gross weight of the truck.
+
+frp for each truck: 
+Truck 785:
+Rated Gross Machine Weight: 550,000 lbs
+Body Weight: 57,779 lbs
+FRP = 550,000 - 57,779 = 492,221 lbs
+
+Truck 789:
+Rated Gross Machine Weight: 715,000 lbs
+Body Weight: 60,406 lbs
+FRP = 715,000 - 60,406 = 654,594 lbs
+
+Truck 793:
+Rated Gross Machine Weight: 890,668 lbs
+Body Weight: 66,471 lbs
+FRP = 890,668 - 66,471 = 824,197 lbs
+
+code expalnation:
+
+10% rule: no more than 10% of the truck's payloads should exceed 110% of the FRP.
+Mean rule: The average payload should not exceed the FRP.
+20% rule: no single payload should exceed 120% of the FRP.
+
+Steps:
+The FRP for each truck (785, 789, 793) is calculated using the difference between the rated gross machine weight and body weight, as shown above.
+Two thresholds are defined based on FRP:
+110% Threshold: 1.10×FRP
+120% Threshold: 1.20×FRP
+Check for 120% Violations:
+
+The code checks if any payloads exceed 120% of the FRP (which violates the 20% rule). It prints the violating records if any are found.
+The percentage of payloads exceeding 110% of the FRP is calculated. If more than 10% of the payloads exceed this threshold, a violation of the 10% rule is reported.
+The average payload is calculated and compared to the FRP. If the mean exceeds the FRP, a violation of the mean rule is flagged.
